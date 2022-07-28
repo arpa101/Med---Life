@@ -1,0 +1,53 @@
+﻿@model List<Project.Models.Entities.OrderDetailsModel>
+@{
+    ViewBag.Title = "ReturnDetails";
+    Layout = "~/Views/Shared/_MyyLayoutPage1.cshtml";
+}
+<style>
+    .pro_table table {
+        border-collapse: collapse;
+        font-size: 20px;
+        width: 96%;
+    }
+
+    table {
+        border: 5px ridge(2,2,1)
+    }
+
+    td {
+        border: 4px ridge /* implied: (1,2,1) */
+    }
+</style>
+<div class="main-content" style="margin-left: 350px;">
+    <div class="main-table">
+        <p style="font-size:30px; color:blue ; margin-left: 65px; font-family:TechnicBold">Details Of Delivered Products</p>
+        <div class="pro_table">
+            <table>
+                <thead>
+                    <tr>
+                        <td>User Name</td>
+                        <td>Product Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var st in Model)
+                    {
+                        <tr>
+                            <td>@st.U_username</td>
+                            <td>@st.P_name</td>
+                            <td>@st.P_O_quantity</td>
+                            <td>@st.P_tprice</td>
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

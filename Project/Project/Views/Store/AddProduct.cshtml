@@ -1,0 +1,56 @@
+﻿@model List<Project.Models.Database.Product>
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_MyyLayoutPage1.cshtml";
+}
+<style>
+    table {
+        background-color: white;
+        margin: 10px;
+    }
+
+    tr {
+        box-shadow: 5px 5px 10px 5px rgba(141,141,141,0.548);
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+
+<div class="content" style="margin-left:300px;">
+    <p><button style="background-color: #6877d9;"> <a style=" text-decoration:none;font-size:30px; color:black;" href="/Store/CreateProduct">Add Product</a></button></p>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Category id</th>
+            <th>Quantity</th>
+            <th>Details</th>
+            <th>Image</th>
+
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.P_name</td>
+                <td>@s.P_price</td>
+                <td>@s.P_categorie_id</td>
+                <td>@s.P_quantity </td>
+                <td>@s.P_details</td>
+                <td>@s.P_img</td>
+
+                <td><a class="btn btn-info" style=" background-color:lightgreen;text-decoration:none;font-size:23px; color:black;" href="/Store/EditProduct/@s.Id">Edit</a></td>
+
+                <td><a class="btn btn-danger" style=" background-color:red;text-decoration:none;font-size:22px; color:black;" href="/Store/DeleteProduct/@s.Id">Delete</a></td>
+
+            </tr>
+        }
+    </table>
+    
+</div>

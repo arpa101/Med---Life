@@ -1,0 +1,46 @@
+﻿@model List<Project.Models.Database.Staff>
+@{
+    ViewBag.Title = "AddStaff";
+    Layout = "~/Views/Shared/_MyyLayoutPage1.cshtml";
+}
+<style>
+    .table {
+        border-collapse: collapse;
+        font-size: 20px;
+        width: 100%;
+    }
+
+        .table tr {
+            color: black;
+            text-align: center;
+        }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<h2>AddStaff</h2>
+<div class="content" style="margin-left:300px;">
+    <p><button style="background-color: #6877d9;"> <a style="text-decoration:none;font-size:30px; color:black;" href="/Store/CreateStaff">Add Staff</a></button></p>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Staff Name</th>
+            <th>Role</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var st in Model)
+        {
+    <tr>
+        <td>@st.id</td>
+        <td>@st.name</td>
+        <td>@st.role</td>
+        <td><a class="btn btn-info" style=" background-color:lightgreen;text-decoration:none;font-size:23px; color:black;" href="">Edit</a></td>
+        <td><a class="btn btn-danger" style=" background-color:red;text-decoration:none;font-size:22px; color:black;" href="">Delete</a></td>
+    </tr>
+        }
+        </table>
+        
+    </div>
